@@ -10,7 +10,7 @@ class SuperAwesomeChat extends React.Component {
 			<div className='chat-window'>
 				<h2>Super Awesome Chat</h2>
 				<CurrentUser userName={user.username} />
-				<MessagesList messages={messages} userName={user.username} />
+				<MessagesList messages={messages} username={user.username} />
 			</div>
 		)
 	}
