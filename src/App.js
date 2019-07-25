@@ -92,8 +92,8 @@ class App extends Component {
           </div>
         </div>
         <div className="container">
-          {users.map((user)=>(
-            <SuperAwesomeChat user={user} messages={messages} />
+          {users.map((user, index)=>(
+            <SuperAwesomeChat key={index} user={user} messages={messages} />
           ))}
         </div>
       </div>
