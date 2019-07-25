@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import SuperAwesomeChat from './SuperAwesomeChat'
 
 /*
 This exercise will help you practice many of your newly aquired React skills.
@@ -89,6 +90,11 @@ class App extends Component {
               </form>
             </div>
           </div>
+        </div>
+        <div className="container">
+          {users.map((user)=>(
+            <SuperAwesomeChat user={user.username} />
+          ))}
         </div>
       </div>
     );
