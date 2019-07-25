@@ -93,7 +93,7 @@ class App extends Component {
         </div>
         <div className="container">
           {users.map((user)=>(
-            <SuperAwesomeChat user={user} />
+            <SuperAwesomeChat user={user} messages={messages} />
           ))}
         </div>
       </div>
