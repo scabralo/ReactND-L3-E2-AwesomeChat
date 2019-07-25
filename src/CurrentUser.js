@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const CurrentUser = props => {
-	const {user} = props
+	const {userName} = props
 	return (
-		<div className="name sender">{user}</div>
+		<div className="name sender">{userName}</div>
 	)
 }
 
 CurrentUser.propTypes = {
-	user: PropTypes.string.isRequired
+	userName: PropTypes.string.isRequired
 }
 
 export default CurrentUser
