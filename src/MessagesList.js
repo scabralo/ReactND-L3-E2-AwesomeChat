@@ -3,25 +3,26 @@ import PropTypes from 'prop-types'
 
 class MessagesList extends React.Component {
 	render() {
-		const {messages} = this.props
+		const {username, messages} = this.props
 		return(
 			<ul className="message-list">
 				{messages.map((message, index) => (
-                <li
-                  key={index}
-                  className={
-                    message.username === users[0].username ? 'message sender' : 'message recipient'
-                  }
-                >
-                  <p>{`${message.username}: ${message.text}`}</p>
-                </li>
-              ))}
+	                <li
+	                  key={index}
+	                  className={
+	                    message.username === username ? 'message sender' : 'message recipient'
+	                  }
+	                >
+	                	<p>{`${message.username}: ${message.text}`}</p>
+	                </li>
+	            ))}
 			</ul>
 		)
 	}
 }
 
-MessagesList'.propTypes = {
+MessagesList.propTypes = {
+	username: PropTypes.string.isRequired,
 	messages: PropTypes.array.isRequired
 }
 
