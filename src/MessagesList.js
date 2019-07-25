@@ -6,7 +6,16 @@ class MessagesList extends React.Component {
 		const {messages} = this.props
 		return(
 			<ul className="message-list">
-
+				{messages.map((message, index) => (
+                <li
+                  key={index}
+                  className={
+                    message.username === users[0].username ? 'message sender' : 'message recipient'
+                  }
+                >
+                  <p>{`${message.username}: ${message.text}`}</p>
+                </li>
+              ))}
 			</ul>
 		)
 	}
