@@ -11,17 +11,19 @@ The instructions are included in the `instructions.md` file.
 
 const users = [{ username: 'Amy' }, { username: 'John' }];
 
-const messages = [
-  { username: 'Amy', text: 'Hi, Jon!' },
-  { username: 'Amy', text: 'How are you?' },
-  { username: 'John', text: 'Hi, Amy! Good, you?' },
-];
 
 class App extends Component {
   /*
   If the user did not type anything, he/she should not be
   allowed to submit.
   */
+  state = {
+    messages: [
+      { username: 'Amy', text: 'Hi, Jon!' },
+      { username: 'Amy', text: 'How are you?' },
+      { username: 'John', text: 'Hi, Amy! Good, you?' },
+    ]
+  }
   isDisabled = () => {
     return false;
   };
