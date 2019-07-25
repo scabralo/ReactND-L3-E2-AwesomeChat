@@ -41,13 +41,14 @@ class App extends Component {
   }
 
   render() {
+    const {messages} = this.state
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
-        <div className="container">
+        {/*<div className="container">
           <div className="chat-window">
             <h2>Super Awesome Chat</h2>
             <div className="name sender">{users[0].username}</div>
@@ -104,10 +105,10 @@ class App extends Component {
               </form>
             </div>
           </div>
-        </div>
+        </div>*/}
         <div className="container">
           {users.map((user, index)=>(
-            <SuperAwesomeChat key={index} user={user} messages={messages} />
+            <SuperAwesomeChat key={index} user={user} messages={messages} sendNewMessage={this.sendNewMessage} />
           ))}
         </div>
       </div>

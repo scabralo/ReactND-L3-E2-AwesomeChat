@@ -6,13 +6,13 @@ import NewMessageForm from './NewMessageForm'
 
 class SuperAwesomeChat extends React.Component {
 	render() {
-		const {user, messages} = this.props
+		const {user, messages, sendNewMessage} = this.props
 		return(
 			<div className='chat-window'>
 				<h2>Super Awesome Chat</h2>
 				<CurrentUser userName={user.username} />
 				<MessagesList messages={messages} username={user.username} />
-				<NewMessageForm />
+				<NewMessageForm sendNewMessage={sendNewMessage} username={user.username} />
 			</div>
 		)
 	}
@@ -20,7 +20,8 @@ class SuperAwesomeChat extends React.Component {
 
 SuperAwesomeChat.propTypes = {
 	user: PropTypes.object.isRequired,
-	messages: PropTypes.array.isRequired
+	messages: PropTypes.array.isRequired,
+	sendNewMessage: PropTypes.func.isRequired
 }
 
 export default SuperAwesomeChat
