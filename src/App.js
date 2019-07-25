@@ -26,7 +26,19 @@ class App extends Component {
   }
   isDisabled = () => {
     return false;
-  };
+  }
+  sendNewMessage = (usernameMessage, textMessage) => {
+    const newMessage = {
+      username: usernameMessage,
+      text: textMessage
+    }
+    const arr = this.state.messages
+    arr.push(newMessage)
+
+    this.setState(()=>({
+      messages: arr
+    }))
+  }
 
   render() {
     return (
