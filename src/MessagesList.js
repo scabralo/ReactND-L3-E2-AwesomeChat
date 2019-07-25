@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import MessagesListItem from './MessagesListItem'
 
 class MessagesList extends React.Component {
 	render() {
@@ -7,14 +8,7 @@ class MessagesList extends React.Component {
 		return(
 			<ul className="message-list">
 				{messages.map((message, index) => (
-	                <li
-	                  key={index}
-	                  className={
-	                    message.username === username ? 'message sender' : 'message recipient'
-	                  }
-	                >
-	                	<p>{`${message.username}: ${message.text}`}</p>
-	                </li>
+	                <MessagesListItem key={index} message={message} username={username} />
 	            ))}
 			</ul>
 		)
